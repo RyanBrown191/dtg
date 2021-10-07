@@ -19,7 +19,7 @@ do {
     uIDest = prompt("Is this where you want to go? Enter Yes or No");
 }
 while (uIDest.trim().toLowerCase() == "no");
-// Destination selected randomly
+
 do {
     transportation = (randomArrayItem(trans));
     alert(transportation);
@@ -27,7 +27,6 @@ do {
 }
 while (uITrans.trim().toLowerCase() == "no");
 
-// Transportation selected randomly
 do {
     entertainment = (randomArrayItem(enter));
     alert(entertainment);
@@ -35,7 +34,6 @@ do {
 }
 while (uIEnter.trim().toLowerCase() == "no");
 
-// Entertainment selected randomly
 do {
     restaurant = (randomArrayItem(rest));
     alert(restaurant);
@@ -44,8 +42,6 @@ do {
 while (uIRest.trim().toLowerCase() == "no");
 
 let tripArray = tripAssembler(destination, entertainment, transportation, restaurant);
-
-// Restaurant selected randomly
 alert("Your trip is complete!");
 alert("You are going to " + tripArray[0] + ", and traveling by "+ tripArray[2]+ ". Your entertainment will be a "+ tripArray[1]+ " and you will be eating at "+ tripArray[3]+ ".");
 alert("Only the finest local dining for you");
