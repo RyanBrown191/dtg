@@ -1,43 +1,58 @@
-function randomDest(dest){
-    return dest[Math.floor(Math.random()*dest.length)];
-}
 let dest = ["Charlotte", "Virginia Beach", "Washington D.C."];
+let trans = ["Bus", "Train", "Car"];
+let enter = ["Movie", "Park", "Museum"];
+let rest = ["Olive Garden", "Red Lobster", "Outback"];
+let destination;
+let transportation;
+let entertainment;
+let restaurant;
+let uIDest;
+let uITrans;
+let uIEnter;
+let uIRest;
+function randomArrayItem(array){
+    return array[Math.floor(Math.random()*array.length)];
+}
 do {
-    alert(randomDest(dest));
-uIDest = prompt("Is this where you want to go? Enter Yes or No");
+    destination = (randomArrayItem(dest));
+    alert(destination);
+    uIDest = prompt("Is this where you want to go? Enter Yes or No");
 }
 while (uIDest.trim().toLowerCase() == "no");
 // Destination selected randomly
-
-function randomTrans(trans){
-    return trans[Math.floor(Math.random()*trans.length)];
-}
-let trans = ["Bus", "Train", "Car"];
 do {
-    alert(randomTrans(trans));
-uITrans = prompt("Is this where you want to go? Enter Yes or No");
+    transportation = (randomArrayItem(trans));
+    alert(transportation);
+    uITrans = prompt("Is this how you want to travel? Enter Yes or No");
 }
 while (uITrans.trim().toLowerCase() == "no");
-// Transportation selected randomly
 
-function randomEnter(enter){
-    return enter[Math.floor(Math.random()*enter.length)];
-}
-let enter = ["Movies", "Park", "Museum"];
+// Transportation selected randomly
 do {
-    alert(randomEnter(enter));
-uIEnter = prompt("Is this where you want to go? Enter Yes or No");
+    entertainment = (randomArrayItem(enter));
+    alert(entertainment);
+    uIEnter = prompt("Is this where you want to go? Enter Yes or No");
 }
 while (uIEnter.trim().toLowerCase() == "no");
-// Entertainment selected randomly
 
-function randomRest(rest){
-    return rest[Math.floor(Math.random()*rest.length)];
-}
-let rest = ["Olive Garden", "Red Lobster", "Outback"];
+// Entertainment selected randomly
 do {
-    alert(randomRest(rest));
-uIRest = prompt("Is this where you want to go? Enter Yes or No");
+    restaurant = (randomArrayItem(rest));
+    alert(restaurant);
+    uIRest = prompt("Is this where you want to eat? Enter Yes or No");
 }
 while (uIRest.trim().toLowerCase() == "no");
+
+let tripArray = tripAssembler(destination, entertainment, transportation, restaurant);
+
 // Restaurant selected randomly
+alert("Your trip is complete!");
+alert("You are going to " + tripArray[0] + ", and traveling by "+ tripArray[2]+ ". Your entertainment will be a "+ tripArray[1]+ " and you will be eating at "+ tripArray[3]+ ".");
+alert("Only the finest local dining for you");
+
+console.log("You are going to " + tripArray[0] + ", and traveling by "+ tripArray[2]+ ". Your entertainment will be a "+ tripArray[1]+ " and you will be eating at "+ tripArray[3]+ ".");
+
+function tripAssembler(d, e, t, r){
+    return [d, e, t, r];
+}
+
